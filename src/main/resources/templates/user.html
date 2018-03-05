@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>用户列表</title>
+        <link rel="stylesheet" href="layui/css/layui.css" media="all">
+
+    </head>
+<body>
+<div class="layui-btn-group demoTable">
+    <button class="layui-btn" id="button1">添加用户</button>
+    <button class="layui-btn" data-type="deleteUsers">批量删除</button>
+</div>
+
+<table class="layui-table" lay-data="{height:'full-30',cellMinWidth: 80, url:'localhost:8080/user/getpage.action', page:true,limit:15, limits:[15,30,45,60],id:'test'}" lay-filter="test">
+    <thead>
+
+    <tr>
+        <th lay-data="{checkbox:true}"></th>
+        <th lay-data="{field:'id', width:'5%'}">编号</th>
+        <th lay-data="{field:'username',width:'10%'}">用户名</th>
+        <th lay-data="{field:'password',width:'10%',sort: true}">密码</th>
+        <th lay-data="{field:'email',width:'15%',sort: true}">邮箱</th>
+        <th lay-data="{field:'realName',width:'10%',sort: true}">真实姓名</th>
+        <th lay-data="{field:'rolename',width:'13%',sort: true}">角色</th>
+        <th lay-data="{fixed: 'right',width:'30%' ,align:'center', toolbar: '#barDemo'}"></th>
+      <!-- <th lay-data="{field:'createTime', width:250, sort: true}">创建时间</th>
+        <th lay-data="{field:'data_state', width:30}">1</th>-->
+        <!--<th lay-data="{field:'wealth', width:135, sort: true}">财富</th>-->
+    </tr>
+    </thead>
+</table>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-mini" lay-event="detail">添加角色</a>
+    <a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
+</script>
+<script src="layui/layui.js"></script>
+<script src="layui/layui.all.js"></script>
+<script src="layui/layer.js"></script>
+<script src="layui/jquery.min.js"></script>
+<script src="layui/user.js"></script>
+</body>
+</html>

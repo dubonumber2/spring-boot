@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+    <a href="" onclick="get()">hello world！</a>
+</body>
+<script>
+    $(document).ready(function(){
+        alert(123);
+        $.ajax({
+            url:'http://localhost:8080/user/login.action',
+           // url:'/ajax',
+             data:{username:'dubo',password:'1234562'},
+            dataType:'text',
+            type:'get',
+            success:function(data) {
+                alert(data);
+            },
+            error:function () {
+                alert("失败");
+            }
+
+        });
+
+    });
+
+
+
+
+
+
+
+
+</script>
+
+</html>
